@@ -13,14 +13,15 @@ function DrawBubblechart(sampleId) {
 }
 
 // Show Metadata (Event Handler)
-function ShowMetadata(newSampleId) {
-    console.log(`Show Metadata(${newSampleId})`);
+function ShowMetadata(sampleId) {
+    console.log(`Show Metadata(${sampleId})`);
 }
 
 // New Sample ID (Event Handler)
 function optionChanged(newSampleId) {
     console.log(`User Selected(${newSampleId})`);
 
+    // add stubs
     DrawBargraph(newSampleId);
     DrawBubblechart(newSampleId);
     ShowMetadata(newSampleId);
@@ -45,17 +46,13 @@ function InitDashboard() {
 
         var id = sampleNames[0];
 
-        //adding stub
+        //Draw Graphs and Metadata
         DrawBargraph(id);
         DrawBubblechart(id);
         ShowMetadata(id);
     });
 
-    // Update bargraph
-
-    // Update bubblechart
-
-    // Update demographics
+    
 }
 
 InitDashboard();
