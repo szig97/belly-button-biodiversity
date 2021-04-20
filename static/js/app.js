@@ -2,6 +2,30 @@
 
 console.log("app load success")
 
+// Draw bargraph
+function DrawBargraph(sampleId) {
+    console.log(`Draw Bargraph(${sampleId})`);
+}
+
+// Draw Bubblechart
+function DrawBubblechart(sampleId) {
+    console.log(`Draw Bubblechart(${sampleId})`);
+}
+
+// Show Metadata
+function ShowMetadata(newSampleId) {
+    console.log(`Show Metadata(${newSampleId})`);
+}
+
+// New Sample ID
+function optionChanged(newSampleId) {
+    console.log(`User Selected(${newSampleId})`);
+
+    DrawBargraph(newSampleId);
+    DrawBubblechart(newSampleId);
+    ShowMetadata(newSampleId);
+}
+
 function InitDashboard() {
     console.log("InitDashboard()");
 
@@ -18,6 +42,13 @@ function InitDashboard() {
                 .text(sampleId)
                 .property("value", sampleId);
         });
+
+        var id = sampleNames[0];
+
+        //adding stub
+        DrawBargraph(id);
+        DrawBubblechart(id);
+        ShowMetadata(id);
     });
 
     // Update bargraph
