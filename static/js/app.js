@@ -2,22 +2,22 @@
 
 console.log("app load success")
 
-// Draw bargraph
+// Draw bargraph (Event Handler)
 function DrawBargraph(sampleId) {
     console.log(`Draw Bargraph(${sampleId})`);
 }
 
-// Draw Bubblechart
+// Draw Bubblechart (Event Handler)
 function DrawBubblechart(sampleId) {
     console.log(`Draw Bubblechart(${sampleId})`);
 }
 
-// Show Metadata
+// Show Metadata (Event Handler)
 function ShowMetadata(newSampleId) {
     console.log(`Show Metadata(${newSampleId})`);
 }
 
-// New Sample ID
+// New Sample ID (Event Handler)
 function optionChanged(newSampleId) {
     console.log(`User Selected(${newSampleId})`);
 
@@ -29,7 +29,7 @@ function optionChanged(newSampleId) {
 function InitDashboard() {
     console.log("InitDashboard()");
 
-    // Populate dropdown
+    // Populate dropdown 
     var selector = d3.select("#selDataset");
 
     d3.json("data/samples.json").then(data => {
