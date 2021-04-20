@@ -76,6 +76,19 @@ function DrawBubblechart(sampleId) {
 // Show Metadata (Event Handler)
 function ShowMetadata(sampleId) {
     console.log(`Show Metadata(${sampleId})`);
+
+    d3.json("data/samples.json").then(data => {
+        console.log(data);
+
+        var metadata = data.metadata;
+        var resultArray = metadata.filter(s => s.id == sampleId);
+        var result = resultArray[0];
+        var panel = d3.select("#sample-metadata");
+        panel.html("");
+        Object.entries(result).forEach(([key, value]) => {
+            panel.append("h6").text(`${key}: ${value}`);
+        });
+    });
 }
 
 // New Sample ID (Event Handler)
